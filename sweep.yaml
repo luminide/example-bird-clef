@@ -1,0 +1,40 @@
+parameters:
+  arch:
+    values: ['resnet50', 'efficientnet_b3']
+  dropout_rate:
+    distribution: q_uniform
+    min: 0.0
+    max: 0.75
+    q: 0.25
+  label_smoothing:
+    distribution: q_uniform
+    min: 0.0
+    max: 0.05
+    q: 0.01
+  lr:
+    distribution: log_uniform
+    min: 0.0005
+    max: 0.01
+  weight_decay:
+    distribution: q_uniform
+    min: 0.0
+    max: 0.01
+    q: 0.001
+  num_mels:
+    distribution: q_uniform
+    min: 64
+    max: 192
+    q: 64
+  spectrogram_width:
+    distribution: q_uniform
+    min: 128
+    max: 256
+    q: 128
+  image_aug_prob:
+    distribution: uniform
+    min: 0.0
+    max: 0.8
+  audio_aug_prob:
+    distribution: uniform
+    min: 0.0
+    max: 0.4

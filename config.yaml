@@ -1,0 +1,34 @@
+# this can be any network from the timm library
+arch: resnet50
+pretrained: true
+dropout_rate: 0.5
+label_smoothing: 0.01
+
+# training clip duration in seconds
+duration: 5
+# resize 5 second spectrograms to this width on the fly
+spectrogram_width: 128
+# if the predicted probability is >= this value,
+# consider it positive (only applies to validation)
+prob_threshold: 0.2
+
+# optimizer settings
+optim: adam
+lr: 0.001
+weight_decay: 0.01
+batch_size: 64
+
+# scheduler settings
+gamma: 0.96
+
+# data augmentation
+image_aug_prob: 0.2
+audio_aug_prob: 0.2
+max_cutout: 10
+
+min_freq: 500
+max_freq: 12500
+num_mels: 128
+num_fft: 1024
+hop_length: 512
+sample_rate: 32000
